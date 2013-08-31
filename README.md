@@ -38,8 +38,5 @@ edbo.createSession({ config: "config.json" }, function(session) {
 })
 ```
 
-##Requirements
+##Dependencies
 * [**node-soap**](https://github.com/milewise/node-soap)
-
-###important!
-Due to bug in `node-soap@0.2.7` on **npm manager\`s repo**, you should manually clone [master branch](https://github.com/milewise/node-soap) to `node_modules/soap/` directory and run there `npm -i`

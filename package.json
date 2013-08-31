@@ -5,6 +5,7 @@
   "private": true,
 
   "dependencies" : {
+    "soap": "git://github.com/milewise/node-soap.git"
   },
 
   "repository": {
