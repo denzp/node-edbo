@@ -5,11 +5,11 @@
   "private": true,
 
   "dependencies" : {
-    "soap": "git://github.com/milewise/node-soap.git"
+    "soap": "git+https://github.com/milewise/node-soap.git"
   },
 
   "repository": {
     "type": "git",
-    "url": "https://github.com/denzp/node-edbo.git"
+    "url": "git+https://github.com/denzp/node-edbo.git"
   }
 }
