@@ -5,7 +5,14 @@
   "private": true,
 
   "dependencies" : {
-    "soap": "git+https://github.com/milewise/node-soap.git"
+    "soap": "*",
+    "bluebird": "*",
+    "nconf": "*",
+    "lodash": "*"
+  },
+
+  "scripts": {
+    "test": "cd test; node index.js"
   },
 
   "repository": {
