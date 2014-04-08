@@ -2,7 +2,7 @@ Node.js EDBO library
 =================
 
 ###Overview
-**_Early Alpha_** unofficial [EDBO](http://edbo.gov.ua/) middleware library for easy creation of EDBO clients.
+**_Early Alpha_** unofficial [EDBO](http://edbo.gov.ua/) library.
 
 ##Usage
 Firstly, you need yo create *config file* in JSON format which contains *security credentials* and *connection details* of EDBO services
@@ -10,33 +10,33 @@ Firstly, you need yo create *config file* in JSON format which contains *securit
 **config.json**
 ```json
 {
-  "Host": "EDBO_HOST",
-  "Port": EDBO_PORT,
+  "edbo": {
+    "host": "test.edbo.gov.ua",
+    "port": 8080,
 
-  "User":           "YOUR_LOGIN",
-  "Password":       "YOUR_PASSWORD",
-  "ApplicationKey": "YOUR_APP_KEY"
+    "user": "...",
+    "password": "..."
+  }
 }
-```
-
-in case of *test* EDBO services:
-```
-EDBO_HOST = "test.edbo.gov.ua"
-EDBO_PORT = 8080
-YOUR_APP_KEY = ""
 ```
 
 Then you could use the library itself
 
 **edbo-client-example.js**
 ```javascript
-edbo.createSession({ config: "config.json" }, function(session) {
-  session.request("guides", "EducationTypesGet", function(err, result) {
-    if(err) throw err;
-    console.log(result.dEducationTypes);
-  })
-})
-```
+var EDBO = require('../');
 
-##Dependencies
-* [**node-soap**](https://github.com/milewise/node-soap)
+EDBO.setGlobalConfig('config.json');
+
+EDBO
+  .session()
+  .then(function(session) {
+    return session.Guides.BenefitsGet();
+  })
+  .then(function(data) {
+    console.log(data.dBenefits);
+  })
+  .catch(function(err) {
+    console.log(err);
+  })
+```
