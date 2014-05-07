@@ -1,20 +1,19 @@
 {
   "name": "node-edbo",
   "version": "0.1.0",
-  "author": "denzp",
-  "private": true,
-
-  "dependencies" : {
-    "soap": "*",
-    "bluebird": "*",
-    "nconf": "*",
-    "lodash": "*"
+  "author": {
+    "name": "denzp"
   },
-
+  "private": true,
+  "dependencies": {
+    "bluebird": "^1.2.4",
+    "lodash": "^2.4.1",
+    "nconf": "^0.6.9",
+    "soap": "^0.4.4"
+  },
   "scripts": {
     "test": "cd test; node index.js"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/denzp/node-edbo.git"
