@@ -1,9 +1,9 @@
-var EDBO = require('../');
+'use strict';
 
+var EDBO = require('../');
 EDBO.setGlobalConfig('config.json');
 
 var currentSession;
-
 EDBO
   .session()
   .then(function(session) {
@@ -20,4 +20,4 @@ EDBO
   })
   .catch(function(err) {
     console.log(err);
-  })
+  });
